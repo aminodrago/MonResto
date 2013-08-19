@@ -1,45 +1,50 @@
 <?php
+
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Zend Framework
  *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2013 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * LICENSE
+ *
+ * This source file is subject to the new BSD license that is bundled
+ * with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://framework.zend.com/license/new-bsd
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@zend.com so we can send you a copy immediately.
+ *
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @version    $Id: Int.php 24594 2012-01-05 21:27:01Z matthew $
  */
 
-namespace Zend\Filter;
 
-class Int extends AbstractFilter
+/**
+ * @see Zend_Filter_Interface
+ */
+require_once 'Zend/Filter/Interface.php';
+
+
+/**
+ * @category   Zend
+ * @package    Zend_Filter
+ * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ */
+class Zend_Filter_Int implements Zend_Filter_Interface
 {
     /**
-     * Defined by Zend\Filter\FilterInterface
+     * Defined by Zend_Filter_Interface
      *
      * Returns (int) $value
      *
-     * If the value provided is non-scalar, the value will remain unfiltered
-     * and an E_USER_WARNING will be raised indicating it's unfilterable.
-     *
      * @param  string $value
-     * @return int|mixed
+     * @return integer
      */
     public function filter($value)
     {
-        if (null === $value) {
-            return null;
-        }
-
-        if (!is_scalar($value)){
-            trigger_error(
-                sprintf(
-                    '%s expects parameter to be scalar, "%s" given; cannot filter',
-                    __METHOD__,
-                    (is_object($value) ? get_class($value) : gettype($value))
-                ),
-                E_USER_WARNING
-            );
-            return $value;
-        }
-
         return (int) ((string) $value);
     }
 }

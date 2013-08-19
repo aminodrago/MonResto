@@ -1,3 +1,6 @@
 <?php
-abstract class Application_Model_Typeboisson extends Application_Model_Resume
+abstract class Application_Model_Typeboisson extends Application_Model_LibeleElement
+{
+    
+}
 ?>

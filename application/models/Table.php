@@ -1,5 +1,5 @@
 <?php
-abstract class Application_Model_Table extends Application_Model_Tablesalle
+abstract class Application_Model_Table extends Application_Model_RestoElement
 {
 protected $_nbplace;
     public function getNbplace() { return $this->_nbplace; }

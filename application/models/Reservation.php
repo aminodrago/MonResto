@@ -1,5 +1,5 @@
 <?php
-abstract class Application_Model_Reservation extends Application_Model_Monresto
+abstract class Application_Model_Reservation extends Application_Model_BddElement
 {
 protected $_nbpersonne;
 protected $_commentaire;
